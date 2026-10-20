@@ -111,6 +111,7 @@ section{padding:100px 0}
 .tcard{background:var(--paper);border-radius:var(--r);overflow:hidden;border:1px solid var(--line)}
 .tphoto{aspect-ratio:4/3.4;display:grid;place-items:center;font-family:'Unbounded';font-size:54px;color:rgba(255,255,255,.9);position:relative}
 .tphoto small{position:absolute;bottom:12px;right:14px;font-family:'Manrope';font-size:11px;letter-spacing:.06em;opacity:.7}
+.tphoto img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 25%;z-index:1}
 .tbody{padding:24px 26px 28px}
 .tname{font-family:'Unbounded';font-size:18px}
 .trole{font-size:13px;color:var(--sage);font-weight:600;margin:4px 0 12px}
@@ -390,7 +391,7 @@ footer{padding:40px 0;border-top:1px solid var(--line);font-size:13px;color:var(
     </div>
     <div class="tr-grid">
       <div class="tcard reveal">
-        <div class="tphoto" style="background:linear-gradient(150deg,#6f8a6e,#34473a)">НФ<small>место для фото</small></div>
+        <div class="tphoto" style="background:linear-gradient(150deg,#6f8a6e,#34473a)">НФ<small>место для фото</small><img src="img/nika-firsova.jpg" alt="Ника Фирсова" loading="lazy" onerror="this.remove()"></div>
         <div class="tbody">
           <div class="tname">Ника Фирсова</div>
           <div class="trole">Основатель студии, ведущий тренер</div>
@@ -399,7 +400,7 @@ footer{padding:40px 0;border-top:1px solid var(--line);font-size:13px;color:var(
         </div>
       </div>
       <div class="tcard reveal">
-        <div class="tphoto" style="background:linear-gradient(150deg,#d39a7c,#a9603f)">ЕВ<small>место для фото</small></div>
+        <div class="tphoto" style="background:linear-gradient(150deg,#d39a7c,#a9603f)">ЕВ<small>место для фото</small><img src="img/ekaterina-vasnetsova.jpg" alt="Екатерина Васнецова" loading="lazy" onerror="this.remove()"></div>
         <div class="tbody">
           <div class="tname">Екатерина Васнецова</div>
           <div class="trole">Мастер-тренер, нутрициолог</div>
@@ -408,7 +409,7 @@ footer{padding:40px 0;border-top:1px solid var(--line);font-size:13px;color:var(
         </div>
       </div>
       <div class="tcard reveal">
-        <div class="tphoto" style="background:linear-gradient(150deg,#7f93a6,#3d5163)">АК<small>место для фото</small></div>
+        <div class="tphoto" style="background:linear-gradient(150deg,#7f93a6,#3d5163)">АК<small>место для фото</small><img src="img/anna-kaygorodova.jpg" alt="Анна Кайгородова" loading="lazy" onerror="this.remove()"></div>
         <div class="tbody">
           <div class="tname">Анна Кайгородова</div>
           <div class="trole">Тренер-стажёр</div>
