@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="format-detection" content="telephone=no">
+<title>Территория Здорового Движения — фитнес-студия в Кольцово</title>
+<meta name="description" content="Фитнес-студия в Кольцово: здоровая спина, нейро-фитнес, степ-аэробика. Мини-группы до 6 человек, раздельные мужские и женские группы. Бесплатное пробное занятие.">
+<link rel="preconnect" href="https://fonts.bunny.net">
+<link href="https://fonts.bunny.net/css?family=unbounded:300,400,500|manrope:400,500,600,700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f3f1ea;--bg2:#e9e5da;--paper:#fbfaf6;
+  --ink:#1e2822;--ink2:#4a564e;--mute:#7b857e;
+  --sage:#6f8a6e;--sage-dk:#34473a;--sage-lt:#c9d5c3;
+  --clay:#c9805e;--clay-lt:#efd9cb;
+  --line:rgba(30,40,34,.12);
+  --r:22px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:'Manrope',system-ui,sans-serif;font-size:16px;line-height:1.6;overflow-x:hidden}
+a{color:inherit}
+img{max-width:100%;display:block}
+.wrap{max-width:1200px;margin:0 auto;padding:0 32px}
+h1,h2,h3{font-family:'Unbounded',sans-serif;font-weight:400;line-height:1.15;letter-spacing:-.01em}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(243,241,234,.9);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;height:72px}
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none}
+.logo-mark{width:44px;height:44px;border-radius:50%;background:var(--sage-dk);color:var(--bg);display:grid;place-items:center;font-family:'Unbounded';font-size:13px;font-weight:500;letter-spacing:.04em}
+.logo-txt{font-size:11px;line-height:1.25;text-transform:uppercase;letter-spacing:.12em;font-weight:600;color:var(--ink2)}
+.nav-links{display:flex;gap:26px;list-style:none}
+.nav-links a{font-size:13px;font-weight:500;color:var(--ink2);text-decoration:none;transition:color .2s}
+.nav-links a:hover{color:var(--ink)}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:14px 26px;border-radius:100px;background:var(--sage-dk);color:var(--paper);font-weight:600;font-size:14px;text-decoration:none;border:none;cursor:pointer;transition:transform .2s,background .2s}
+.btn:hover{background:var(--ink);transform:translateY(-1px)}
+.btn.clay{background:var(--clay)}
+.btn.clay:hover{background:#b46d4c}
+.btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
+.btn.ghost:hover{background:var(--paper)}
+.btn.sm{padding:10px 20px;font-size:13px}
+.burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px}
+.burger span{width:22px;height:2px;background:var(--ink);display:block;border-radius:2px}
+.mob-menu{position:fixed;inset:0;background:var(--bg);z-index:199;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:24px;opacity:0;pointer-events:none;transition:opacity .3s}
+.mob-menu.open{opacity:1;pointer-events:all}
+.mob-menu a{font-family:'Unbounded';font-size:20px;text-decoration:none}
+
+/* HERO */
+.hero{padding:150px 0 90px;position:relative;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center}
+.badge{display:inline-flex;align-items:center;gap:8px;padding:8px 16px;border-radius:100px;background:var(--clay-lt);color:#8a4a2c;font-size:13px;font-weight:600}
+.badge::before{content:'';width:8px;height:8px;border-radius:50%;background:var(--clay)}
+.hero h1{font-size:clamp(38px,5.6vw,72px);margin:22px 0 22px}
+.hero h1 em{font-style:normal;color:var(--sage)}
+.hero p.lead{font-size:18px;color:var(--ink2);max-width:540px}
+.hero-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
+.hero-facts{display:flex;gap:36px;margin-top:48px;flex-wrap:wrap}
+.hero-facts b{display:block;font-family:'Unbounded';font-weight:400;font-size:30px;color:var(--sage-dk)}
+.hero-facts span{font-size:13px;color:var(--mute)}
+.hero-art{position:relative;aspect-ratio:1/1.1;border-radius:200px 200px var(--r) var(--r);background:linear-gradient(160deg,var(--sage) 0%,var(--sage-dk) 100%);overflow:hidden}
+.hero-art svg{position:absolute;inset:0;width:100%;height:100%}
+.hero-art .chip{position:absolute;background:var(--paper);border-radius:16px;padding:14px 18px;box-shadow:0 10px 30px rgba(0,0,0,.12);font-size:13px;line-height:1.35}
+.hero-art .chip b{display:block;font-size:15px}
+.chip.c1{left:-1px;bottom:56px;border-radius:0 16px 16px 0}
+.chip.c2{right:20px;top:60px}
+.stars{color:var(--clay);letter-spacing:2px}
+
+/* SECTIONS */
+section{padding:100px 0}
+.s-head{display:flex;justify-content:space-between;align-items:end;gap:32px;margin-bottom:48px;flex-wrap:wrap}
+.s-label{font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--sage);margin-bottom:14px}
+.s-title{font-size:clamp(28px,3.6vw,46px);max-width:720px}
+.s-sub{color:var(--ink2);max-width:420px}
+
+/* ABOUT */
+.about-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.acard{background:var(--paper);border-radius:var(--r);padding:30px 26px;border:1px solid var(--line)}
+.acard .ic{width:48px;height:48px;border-radius:14px;background:var(--sage-lt);display:grid;place-items:center;margin-bottom:22px}
+.acard .ic svg{width:24px;height:24px;stroke:var(--sage-dk);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.acard h3{font-size:17px;margin-bottom:10px}
+.acard p{font-size:14px;color:var(--ink2)}
+.about-quote{margin-top:16px;background:var(--sage-dk);color:var(--bg);border-radius:var(--r);padding:44px;display:grid;grid-template-columns:auto 1fr;gap:32px;align-items:center}
+.about-quote .q{font-family:'Unbounded';font-weight:300;font-size:clamp(18px,2.2vw,26px);line-height:1.4}
+.about-quote .who{font-size:14px;opacity:.75;margin-top:14px}
+.avatar{width:120px;height:120px;border-radius:50%;background:var(--sage);display:grid;place-items:center;font-family:'Unbounded';font-size:32px;color:var(--bg)}
+
+/* DIRECTIONS */
+#directions{background:var(--bg2)}
+.dir-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.dcard{position:relative;background:var(--paper);border-radius:var(--r);padding:28px;cursor:pointer;transition:transform .25s,box-shadow .25s;display:flex;flex-direction:column;min-height:300px;border:1px solid var(--line)}
+.dcard:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(30,40,34,.1)}
+.dcard .dtop{display:flex;justify-content:space-between;align-items:start;margin-bottom:auto}
+.dnum{font-family:'Unbounded';font-size:13px;color:var(--mute)}
+.dtag{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:6px 12px;border-radius:100px;background:var(--sage-lt);color:var(--sage-dk)}
+.dtag.clay{background:var(--clay-lt);color:#8a4a2c}
+.dcard h3{font-size:22px;margin:40px 0 10px}
+.dcard p{font-size:14px;color:var(--ink2)}
+.dmore{margin-top:20px;font-size:13px;font-weight:700;color:var(--sage-dk);display:flex;align-items:center;gap:6px}
+.dcard.feature{grid-column:span 2;background:var(--sage-dk);color:var(--bg)}
+.dcard.feature p,.dcard.feature .dnum{color:rgba(243,241,234,.75)}
+.dcard.feature .dmore{color:var(--sage-lt)}
+.dcard.feature .dtag{background:rgba(255,255,255,.14);color:var(--bg)}
+.dcard.trial{background:var(--clay);color:#fff}
+.dcard.trial p{color:rgba(255,255,255,.85)}
+.dcard.trial .dmore{color:#fff}
+
+/* TRAINERS */
+.tr-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.tcard{background:var(--paper);border-radius:var(--r);overflow:hidden;border:1px solid var(--line)}
+.tphoto{aspect-ratio:4/3.4;display:grid;place-items:center;font-family:'Unbounded';font-size:54px;color:rgba(255,255,255,.9);position:relative}
+.tphoto small{position:absolute;bottom:12px;right:14px;font-family:'Manrope';font-size:11px;letter-spacing:.06em;opacity:.7}
+.tbody{padding:24px 26px 28px}
+.tname{font-family:'Unbounded';font-size:18px}
+.trole{font-size:13px;color:var(--sage);font-weight:600;margin:4px 0 12px}
+.tbody p{font-size:14px;color:var(--ink2)}
+.tskills{display:flex;flex-wrap:wrap;gap:6px;margin-top:16px}
+.tskills span{font-size:12px;padding:5px 11px;border-radius:100px;background:var(--bg);color:var(--ink2)}
+
+/* SCHEDULE */
+#schedule{background:var(--paper)}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:24px}
+.tab{padding:10px 18px;border-radius:100px;border:1px solid var(--line);background:transparent;font:600 14px 'Manrope';color:var(--ink2);cursor:pointer;transition:all .2s}
+.tab:hover{border-color:var(--sage)}
+.tab.on{background:var(--sage-dk);border-color:var(--sage-dk);color:var(--paper)}
+.sched{display:flex;flex-direction:column;gap:10px}
+.srow{display:grid;grid-template-columns:110px 1fr auto auto;gap:24px;align-items:center;padding:20px 24px;border-radius:16px;background:var(--bg)}
+.stime{font-family:'Unbounded';font-size:20px}
+.sname{font-weight:700}
+.sname small{display:block;font-weight:500;color:var(--mute);font-size:13px}
+.sgrp{font-size:12px;font-weight:700;padding:6px 12px;border-radius:100px;white-space:nowrap}
+.g-w{background:var(--clay-lt);color:#8a4a2c}
+.g-m{background:#d6e0ea;color:#2f4a63}
+.g-a{background:var(--sage-lt);color:var(--sage-dk)}
+.sched-note{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;margin-top:24px;font-size:14px;color:var(--mute)}
+
+/* PRICES */
+.pr-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;align-items:stretch}
+.pcard{background:var(--paper);border-radius:var(--r);padding:30px 26px;display:flex;flex-direction:column;border:1px solid var(--line)}
+.pcard.hit{background:var(--sage-dk);color:var(--bg);position:relative}
+.pcard.hit .pnote,.pcard.hit li{color:rgba(243,241,234,.8)}
+.pcard.hit li::before{background:var(--sage-lt)}
+.hitlbl{position:absolute;top:-12px;left:26px;background:var(--clay);color:#fff;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:6px 12px;border-radius:100px}
+.pname{font-weight:700;font-size:15px}
+.pamt{font-family:'Unbounded';font-size:34px;margin:14px 0 2px}
+.pamt small{font-family:'Manrope';font-size:15px;font-weight:500}
+.pnote{font-size:13px;color:var(--mute);margin-bottom:20px}
+.pcard ul{list-style:none;display:flex;flex-direction:column;gap:9px;margin-bottom:26px;flex:1}
+.pcard li{font-size:14px;color:var(--ink2);padding-left:18px;position:relative}
+.pcard li::before{content:'';position:absolute;left:0;top:9px;width:7px;height:7px;border-radius:50%;background:var(--sage)}
+.pcard .btn{justify-content:center}
+.pcard.hit .btn{background:var(--paper);color:var(--ink)}
+.extra{margin-top:16px;display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.ecard{border:1px dashed rgba(30,40,34,.25);border-radius:var(--r);padding:22px 26px;display:flex;justify-content:space-between;align-items:center;gap:16px}
+.ecard b{font-family:'Unbounded';font-weight:400;font-size:20px;white-space:nowrap}
+.ecard span{font-size:14px;color:var(--ink2)}
+
+/* REVIEWS */
+#reviews{background:var(--bg2)}
+.rv-top{display:flex;align-items:center;gap:18px}
+.rv-score{font-family:'Unbounded';font-size:56px;line-height:1}
+.rv-meta{font-size:14px;color:var(--ink2)}
+.rv-wrap{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:16px;scrollbar-width:thin}
+.rcard{flex:0 0 360px;scroll-snap-align:start;background:var(--paper);border-radius:var(--r);padding:28px;display:flex;flex-direction:column;border:1px solid var(--line)}
+.rcard-text{font-size:15px;color:var(--ink2);margin:14px 0 22px;flex:1}
+.rcard-footer{display:flex;justify-content:space-between;align-items:center;font-size:13px}
+.rcard-author{font-weight:700}
+.rcard-source{color:var(--mute)}
+.rv-nav{display:flex;gap:8px}
+.rv-nav button{width:48px;height:48px;border-radius:50%;border:1px solid var(--line);background:var(--paper);cursor:pointer;font-size:18px;color:var(--ink)}
+.rv-nav button:hover{background:var(--sage-lt)}
+
+/* TRIAL CTA */
+.cta{background:var(--clay);color:#fff;border-radius:32px;padding:64px;display:grid;grid-template-columns:1.2fr 1fr;gap:48px;align-items:center;position:relative;overflow:hidden}
+.cta h2{font-size:clamp(28px,3.4vw,44px)}
+.cta p{opacity:.9;margin-top:16px;max-width:460px}
+.cta-actions{display:flex;flex-direction:column;gap:12px}
+.cta-actions a{display:flex;align-items:center;justify-content:space-between;padding:18px 24px;border-radius:16px;background:rgba(255,255,255,.14);text-decoration:none;font-weight:600;transition:background .2s}
+.cta-actions a:hover{background:rgba(255,255,255,.26)}
+.cta-actions a span{opacity:.75;font-weight:500;font-size:14px}
+
+/* CONTACTS */
+.ct-grid{display:grid;grid-template-columns:1fr 1.3fr;gap:16px}
+.ct-info{background:var(--paper);border-radius:var(--r);padding:36px;display:flex;flex-direction:column;gap:26px;border:1px solid var(--line)}
+.ct-item small{display:block;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--mute);margin-bottom:6px}
+.ct-item a,.ct-item div{font-size:18px;font-weight:600;text-decoration:none}
+.ct-item a:hover{color:var(--sage)}
+.socials{display:flex;gap:8px;flex-wrap:wrap}
+.socials a{padding:10px 18px;border-radius:100px;background:var(--bg);font-size:14px;font-weight:600;text-decoration:none}
+.socials a:hover{background:var(--sage-lt)}
+.map{border-radius:var(--r);overflow:hidden;min-height:440px;background:var(--bg2)}
+.map iframe{width:100%;height:100%;min-height:440px;border:0;display:block}
+
+footer{padding:40px 0;border-top:1px solid var(--line);font-size:13px;color:var(--mute)}
+.ft{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+/* MODAL */
+.overlay{position:fixed;inset:0;background:rgba(20,26,22,.55);z-index:300;opacity:0;pointer-events:none;transition:opacity .25s;display:flex;align-items:center;justify-content:center;padding:20px}
+.overlay.open{opacity:1;pointer-events:all}
+.modal{background:var(--paper);border-radius:28px;max-width:620px;width:100%;max-height:88vh;overflow:auto;padding:44px;position:relative;transform:translateY(16px);transition:transform .25s}
+.overlay.open .modal{transform:none}
+.mclose{position:absolute;top:18px;right:18px;width:40px;height:40px;border-radius:50%;border:none;background:var(--bg);cursor:pointer;font-size:20px}
+.modal .s-label{margin-bottom:8px}
+.modal h3{font-size:28px;margin-bottom:18px}
+.modal p{color:var(--ink2);margin-bottom:14px}
+.modal ul{margin:0 0 20px 18px;color:var(--ink2)}
+.modal li{margin-bottom:6px}
+.mfacts{display:flex;gap:10px;flex-wrap:wrap;margin:6px 0 24px}
+.mfacts span{font-size:13px;padding:7px 14px;border-radius:100px;background:var(--bg);font-weight:600}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+
+/* RESPONSIVE */
+@media (max-width:1024px){
+  .nav-links{display:none}
+  .burger{display:flex}
+  .nav-in .btn{display:none}
+  .about-grid,.pr-grid{grid-template-columns:repeat(2,1fr)}
+  .dir-grid,.tr-grid{grid-template-columns:repeat(2,1fr)}
+  .extra{grid-template-columns:1fr}
+}
+@media (max-width:760px){
+  .wrap{padding:0 16px}
+  section{padding:72px 0}
+  .hero{padding:110px 0 60px}
+  .hero-grid,.ct-grid,.cta{grid-template-columns:1fr}
+  .hero-art{max-width:420px;width:100%;margin:0 auto}
+  .about-grid,.pr-grid,.dir-grid,.tr-grid{grid-template-columns:1fr}
+  .dcard.feature{grid-column:auto}
+  .about-quote{grid-template-columns:1fr;padding:30px}
+  .avatar{width:80px;height:80px;font-size:22px}
+  .srow{grid-template-columns:80px 1fr;gap:6px 16px;padding:16px 18px}
+  .srow .sgrp{grid-column:2;justify-self:start}
+  .srow .btn{display:none}
+  .stime{font-size:17px;grid-row:span 2}
+  .cta{padding:36px 24px;border-radius:24px}
+  .rcard{flex-basis:84%}
+  .modal{padding:32px 22px}
+  .hero-facts{gap:24px}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap nav-in">
+    <a href="#hero" class="logo" aria-label="Территория Здорового Движения">
+      <span class="logo-mark">ТЗД</span>
+      <span class="logo-txt">Территория<br>здорового движения</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#about">О студии</a></li>
+      <li><a href="#directions">Направления</a></li>
+      <li><a href="#trainers">Тренеры</a></li>
+      <li><a href="#schedule">Расписание</a></li>
+      <li><a href="#prices">Цены</a></li>
+      <li><a href="#reviews">Отзывы</a></li>
+      <li><a href="#contacts">Контакты</a></li>
+    </ul>
+    <a href="#trial" class="btn sm">Пробное бесплатно</a>
+    <button class="burger" id="burger" aria-label="Меню"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mob-menu" id="mobMenu">
+  <a href="#about">О студии</a>
+  <a href="#directions">Направления</a>
+  <a href="#trainers">Тренеры</a>
+  <a href="#schedule">Расписание</a>
+  <a href="#prices">Цены</a>
+  <a href="#reviews">Отзывы</a>
+  <a href="#contacts">Контакты</a>
+  <a href="#trial" class="btn clay">Пробное бесплатно</a>
+</div>
+
+<!-- HERO -->
+<header class="hero" id="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="badge">Бесплатное пробное занятие до конца октября</span>
+      <h1>Движение,<br>которое <em>лечит</em>,<br>а не изматывает</h1>
+      <p class="lead">Фитнес-студия в Кольцово для тех, кому важны здоровая спина, суставы и хорошее самочувствие. Мини-группы до 6 человек, отдельные мужские и женские группы, внимательные тренеры.</p>
+      <div class="hero-cta">
+        <a href="#trial" class="btn clay">Записаться на пробное</a>
+        <a href="#directions" class="btn ghost">Направления</a>
+      </div>
+      <div class="hero-facts">
+        <div><b>до 6</b><span>человек в группе</span></div>
+        <div><b>4.9</b><span>рейтинг в 2ГИС</span></div>
+        <div><b>4</b><span>направления</span></div>
+      </div>
+    </div>
+    <div class="hero-art" aria-hidden="true">
+      <svg viewBox="0 0 400 440" preserveAspectRatio="xMidYMid slice">
+        <g fill="none" stroke="rgba(243,241,234,.22)" stroke-width="1.4">
+          <path d="M-20 300 C 60 220, 140 380, 220 290 S 360 200, 440 260"/>
+          <path d="M-20 320 C 60 240, 140 400, 220 310 S 360 220, 440 280"/>
+          <path d="M-20 340 C 60 260, 140 420, 220 330 S 360 240, 440 300"/>
+          <path d="M-20 360 C 60 280, 140 440, 220 350 S 360 260, 440 320"/>
+          <path d="M-20 380 C 60 300, 140 460, 220 370 S 360 280, 440 340"/>
+        </g>
+        <!-- позвоночник как символ -->
+        <g fill="rgba(243,241,234,.9)">
+          <rect x="190" y="70"  width="26" height="14" rx="7"/>
+          <rect x="186" y="92"  width="30" height="15" rx="7.5"/>
+          <rect x="183" y="115" width="34" height="16" rx="8"/>
+          <rect x="182" y="139" width="36" height="17" rx="8.5"/>
+          <rect x="183" y="164" width="36" height="18" rx="9"/>
+          <rect x="186" y="190" width="36" height="19" rx="9.5"/>
+          <rect x="190" y="217" width="36" height="20" rx="10"/>
+          <rect x="192" y="245" width="38" height="21" rx="10.5"/>
+          <rect x="190" y="274" width="40" height="22" rx="11"/>
+        </g>
+        <circle cx="320" cy="90" r="36" fill="#c9805e" opacity=".9"/>
+      </svg>
+      <div class="chip c2"><span class="stars">★★★★★</span><b>59 оценок</b>в 2ГИС</div>
+      <div class="chip c1"><b>Здоровая спина</b>самое популярное направление</div>
+    </div>
+  </div>
+</header>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="wrap">
+    <div class="s-head reveal">
+      <div>
+        <div class="s-label">О студии</div>
+        <h2 class="s-title">Тренировки ради здоровья, а не ради сожжённых калорий</h2>
+      </div>
+      <p class="s-sub">Небольшая уютная студия на Никольском проспекте. Мы работаем по предварительной записи и подбираем нагрузку под ваше состояние здоровья.</p>
+    </div>
+    <div class="about-grid">
+      <div class="acard reveal">
+        <div class="ic"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6M15 14.5c3 0 6 1.8 6 5.5"/></svg></div>
+        <h3>Мини-группы до 6 человек</h3>
+        <p>Тренер видит каждого, поправляет технику и даёт индивидуальные рекомендации.</p>
+      </div>
+      <div class="acard reveal">
+        <div class="ic"><svg viewBox="0 0 24 24"><path d="M12 3v18M5 7h14M5 17h14"/></svg></div>
+        <h3>Раздельные группы</h3>
+        <p>Отдельные мужские и женские сплит-группы, чтобы всем было комфортно.</p>
+      </div>
+      <div class="acard reveal">
+        <div class="ic"><svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-7-11a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 6.5-7 11-7 11z"/></svg></div>
+        <h3>Бережный подход</h3>
+        <p>Перед стартом обсуждаем ваше здоровье и при необходимости советуем консультацию врача.</p>
+      </div>
+      <div class="acard reveal">
+        <div class="ic"><svg viewBox="0 0 24 24"><path d="M3 10l9-6 9 6v10H3z"/><path d="M9 20v-6h6v6"/></svg></div>
+        <h3>Свежий ремонт</h3>
+        <p>Новый инвентарь, кондиционер, тёплый пол в прихожей, чистая раздевалка и питьевая вода.</p>
+      </div>
+    </div>
+    <div class="about-quote reveal">
+      <div class="avatar">НФ</div>
+      <div>
+        <div class="q">«Мы учим двигаться осознанно, чтобы спина не болела, суставы были подвижны, а тренировка давала силы, а не забирала их».</div>
+        <div class="who">Ника Фирсова, основатель и тренер студии</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DIRECTIONS -->
+<section id="directions">
+  <div class="wrap">
+    <div class="s-head reveal">
+      <div>
+        <div class="s-label">Направления</div>
+        <h2 class="s-title">Выберите своё движение</h2>
+      </div>
+      <p class="s-sub">Нажмите на карточку, чтобы узнать подробнее о направлении и о том, кому оно подходит.</p>
+    </div>
+    <div class="dir-grid" id="dirGrid"></div>
+  </div>
+</section>
+
+<!-- TRAINERS -->
+<section id="trainers">
+  <div class="wrap">
+    <div class="s-head reveal">
+      <div>
+        <div class="s-label">Тренеры</div>
+        <h2 class="s-title">Команда, которой доверяют спину</h2>
+      </div>
+      <p class="s-sub">Тренеры с профильным образованием, которые постоянно учатся и работают в связке с врачами.</p>
+    </div>
+    <div class="tr-grid">
+      <div class="tcard reveal">
+        <div class="tphoto" style="background:linear-gradient(150deg,#6f8a6e,#34473a)">НФ<small>место для фото</small></div>
+        <div class="tbody">
+          <div class="tname">Ника Фирсова</div>
+          <div class="trole">Основатель студии, ведущий тренер</div>
+          <p>Специалист по оздоровительному фитнесу и работе со спиной. Делает акцент на технике, стопах и осознанном движении.</p>
+          <div class="tskills"><span>Здоровая спина</span><span>Нейро-фитнес</span><span>Степ</span></div>
+        </div>
+      </div>
+      <div class="tcard reveal">
+        <div class="tphoto" style="background:linear-gradient(150deg,#d39a7c,#a9603f)">ЕВ<small>место для фото</small></div>
+        <div class="tbody">
+          <div class="tname">Екатерина Васнецова</div>
+          <div class="trole">Мастер-тренер, нутрициолог</div>
+          <p>Тренер групповых программ, ведёт «Здоровую спину». Как нутрициолог помогает выстроить питание под ваши цели и самочувствие.</p>
+          <div class="tskills"><span>Здоровая спина</span><span>Групповые программы</span><span>Нутрициология</span></div>
+        </div>
+      </div>
+      <div class="tcard reveal">
+        <div class="tphoto" style="background:linear-gradient(150deg,#7f93a6,#3d5163)">АК<small>место для фото</small></div>
+        <div class="tbody">
+          <div class="tname">Анна Кайгородова</div>
+          <div class="trole">Тренер-стажёр</div>
+          <p>Ведёт степ-аэробику. Энергичные тренировки под музыку с понятными связками для любого уровня.</p>
+          <div class="tskills"><span>Степ-аэробика</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SCHEDULE -->
+<section id="schedule">
+  <div class="wrap">
+    <div class="s-head reveal">
+      <div>
+        <div class="s-label">Расписание</div>
+        <h2 class="s-title">Тренировки по записи</h2>
+      </div>
+      <p class="s-sub">Все занятия проходят по предварительной записи. Напишите нам, и мы подберём удобную группу.</p>
+    </div>
+    <div class="tabs" id="tabs" role="tablist"></div>
+    <div class="sched" id="sched"></div>
+    <div class="sched-note">
+      <span>
+        <span class="sgrp g-w">Ж</span> женская группа &nbsp;
+        <span class="sgrp g-m">М</span> мужская группа &nbsp;
+        <span class="sgrp g-a">Все</span> смешанная
+      </span>
+      <a href="#trial" class="btn sm">Записаться</a>
+    </div>
+  </div>
+</section>
+
+<!-- PRICES -->
+<section id="prices">
+  <div class="wrap">
+    <div class="s-head reveal">
+      <div>
+        <div class="s-label">Цены</div>
+        <h2 class="s-title">Абонементы</h2>
+      </div>
+      <p class="s-sub">Первое занятие бесплатно: познакомитесь с тренером и поймёте, подходит ли вам формат.</p>
+    </div>
+    <div class="pr-grid">
+      <div class="pcard reveal">
+        <div class="pname">Пробное занятие</div>
+        <div class="pamt">0 <small>₽</small></div>
+        <div class="pnote">одно занятие, по записи</div>
+        <ul><li>Знакомство с тренером</li><li>Оценка осанки и подвижности</li><li>Подбор направления</li></ul>
+        <a href="#trial" class="btn ghost">Записаться</a>
+      </div>
+      <div class="pcard reveal">
+        <div class="pname">Разовое посещение</div>
+        <div class="pamt">1 600 <small>₽</small></div>
+        <div class="pnote">1 тренировка</div>
+        <ul><li>Любое направление</li><li>Без обязательств</li></ul>
+        <a href="#trial" class="btn ghost">Записаться</a>
+      </div>
+      <div class="pcard hit reveal">
+        <span class="hitlbl">Популярный</span>
+        <div class="pname">8 занятий</div>
+        <div class="pamt">9 600 <small>₽</small></div>
+        <div class="pnote">1 200 ₽ за занятие · 5 недель</div>
+        <ul><li>2 тренировки в неделю</li><li>Любые направления</li><li>1 заморозка до 7 дней</li></ul>
+        <a href="#trial" class="btn">Выбрать</a>
+      </div>
+      <div class="pcard reveal">
+        <div class="pname">12 занятий</div>
+        <div class="pamt">13 200 <small>₽</small></div>
+        <div class="pnote">1 100 ₽ за занятие · 6 недель</div>
+        <ul><li>2–3 тренировки в неделю</li><li>Любые направления</li><li>2 заморозки до 7 дней</li></ul>
+        <a href="#trial" class="btn ghost">Выбрать</a>
+      </div>
+    </div>
+    <div class="extra">
+      <div class="ecard reveal"><span>Персональная тренировка</span><b>2 800 ₽</b></div>
+      <div class="ecard reveal"><span>Сплит на двоих</span><b>3 600 ₽</b></div>
+      <div class="ecard reveal"><span>Безлимит на месяц</span><b>14 500 ₽</b></div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section id="reviews">
+  <div class="wrap">
+    <div class="s-head reveal">
+      <div>
+        <div class="s-label">Отзывы</div>
+        <div class="rv-top">
+          <div class="rv-score">4.9</div>
+          <div class="rv-meta"><span class="stars">★★★★★</span><br>59 оценок и 50 отзывов в 2ГИС</div>
+        </div>
+      </div>
+      <div class="rv-nav">
+        <button id="rvPrev" aria-label="Назад">←</button>
+        <button id="rvNext" aria-label="Вперёд">→</button>
+      </div>
+    </div>
+    <div class="rv-wrap" id="rvWrap"></div>
+  </div>
+</section>
+
+<!-- TRIAL CTA -->
+<section id="trial">
+  <div class="wrap">
+    <div class="cta reveal">
+      <div>
+        <h2>Первое занятие бесплатно</h2>
+        <p>Напишите или позвоните. Расскажите о своих целях и самочувствии, и мы подберём подходящую группу и удобное время.</p>
+      </div>
+      <div class="cta-actions">
+        <a href="tel:+79831386728">Позвонить <span>+7 983 138-67-28</span></a>
+        <a href="https://t.me/+79831386728" target="_blank" rel="noopener">Telegram <span>написать →</span></a>
+        <a href="https://vk.com/tzdfitness" target="_blank" rel="noopener">ВКонтакте <span>vk.com/tzdfitness →</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACTS -->
+<section id="contacts">
+  <div class="wrap">
+    <div class="s-head reveal">
+      <div>
+        <div class="s-label">Контакты</div>
+        <h2 class="s-title">Как нас найти</h2>
+      </div>
+    </div>
+    <div class="ct-grid">
+      <div class="ct-info reveal">
+        <div class="ct-item"><small>Адрес</small><div>рп. Кольцово, Никольский проспект, 16<br><span style="font-weight:500;font-size:15px;color:var(--ink2)">1 этаж, 5-й микрорайон</span></div></div>
+        <div class="ct-item"><small>Телефон</small><a href="tel:+79831386728">+7 983 138-67-28</a></div>
+        <div class="ct-item"><small>Почта</small><a href="mailto:tzdfitness@yandex.ru">tzdfitness@yandex.ru</a></div>
+        <div class="ct-item"><small>Режим работы</small><div>Пн–Пт 7:00–21:30<br>Сб 9:00–14:00 · по записи</div></div>
+        <div class="ct-item"><small>Мы в сети</small>
+          <div class="socials">
+            <a href="https://vk.com/tzdfitness" target="_blank" rel="noopener">ВКонтакте</a>
+            <a href="https://t.me/+79831386728" target="_blank" rel="noopener">Telegram</a>
+            <a href="https://max.ru/u/f9LHodD0cOIeAuWrpEoODqoEEnTeXzoLqUoLWNA3yhBraZAMWddk67n8Plg" target="_blank" rel="noopener">MAX</a>
+            <a href="https://2gis.ru/novosibirsk/firm/70000001078495320" target="_blank" rel="noopener">2ГИС</a>
+          </div>
+        </div>
+      </div>
+      <div class="map reveal">
+        <iframe src="https://yandex.ru/map-widget/v1/?ll=83.204974%2C54.941467&z=16&pt=83.204974,54.941467,pm2grm" title="Карта: Никольский проспект, 16, Кольцово" loading="lazy" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap ft">
+    <span>© 2026 Территория Здорового Движения · Кольцово, Новосибирская область</span>
+    <span>Имеются противопоказания, проконсультируйтесь со специалистом</span>
+  </div>
+</footer>
+
+<!-- MODAL -->
+<div class="overlay" id="overlay" aria-hidden="true">
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="mTitle">
+    <button class="mclose" id="mClose" aria-label="Закрыть">×</button>
+    <div class="s-label" id="mCat"></div>
+    <h3 id="mTitle"></h3>
+    <div id="mBody"></div>
+    <a href="#trial" class="btn clay" id="mCta">Записаться на пробное</a>
+  </div>
+</div>
+
+<script>
+/* ===== ДАННЫЕ: правьте здесь ===== */
+const DIRECTIONS = [
+  {id:'back', tag:'Хит', feature:true, title:'Здоровье спины и тела',
+   short:'Укрепление мышечного корсета, мобильность позвоночника, работа с осанкой и стопами.',
+   facts:['55 минут','Мужские и женские группы','Любой уровень'],
+   body:`<p>Наше главное направление. Подходит при сидячей работе, болях в пояснице и шее, сколиозе, протрузиях и в период восстановления после травм.</p>
+   <ul><li>Мягкая суставная разминка и работа со стопами на массажных мячах</li><li>Укрепление глубоких мышц спины и пресса</li><li>Мобилизация грудного отдела и тазобедренных суставов</li><li>Дыхательные упражнения и расслабление</li></ul>
+   <p>Перед началом занятий тренер обсуждает с вами самочувствие и при необходимости рекомендует консультацию врача.</p>`},
+  {id:'neuro', tag:'Новое', title:'Нейро-фитнес',
+   short:'Упражнения на координацию, баланс и связь «мозг–тело». Тренирует внимание и память.',
+   facts:['55 минут','Мужские и женские группы','Любой уровень'],
+   body:`<p>Нейро-фитнес объединяет физическую нагрузку и когнитивные задачи: асимметричные движения, баланс, реакция, работа с мячами и ритмом.</p>
+   <ul><li>Улучшает координацию и устойчивость</li><li>Тренирует концентрацию и память</li><li>Снижает уровень стресса</li></ul>
+   <p>Отлично подходит людям с умственной работой и тем, кто хочет сохранить ясность ума и ловкость с возрастом.</p>`},
+  {id:'step1', tag:'Начинающий', title:'Степ-аэробика',
+   short:'Кардио на степ-платформе в спокойном темпе. Простые связки, выносливость и хорошее настроение.',
+   facts:['55 минут','Мужские и женские группы','Начинающий'],
+   body:`<p>Классическая степ-аэробика для новичков: разучиваем базовые шаги и собираем их в простые связки под музыку.</p>
+   <ul><li>Тренирует сердце и выносливость</li><li>Укрепляет ноги и ягодицы</li><li>Бережная нагрузка на колени благодаря правильной технике</li></ul>`},
+  {id:'step2', tag:'Средний', title:'Степ-аэробика для женщин',
+   short:'Более сложная хореография и интенсивный темп для тех, кто уже уверенно стоит на степе.',
+   facts:['55 минут','Женская группа','Средний уровень'],
+   body:`<p>Следующий шаг после начального уровня: сложные связки, смена направлений, повышенный темп.</p>
+   <ul><li>Интенсивное кардио</li><li>Развитие координации и памяти</li><li>Энергичная музыка и драйв</li></ul>`},
+  {id:'trial', trial:true, tag:'Бесплатно', title:'Пробное занятие',
+   short:'Не знаете, с чего начать? Приходите на бесплатную пробную тренировку, и мы поможем выбрать.',
+   facts:['Бесплатно','По записи'],
+   body:`<p>На пробном занятии тренер познакомится с вами, оценит осанку и подвижность, расскажет о направлениях и поможет выбрать подходящую группу.</p><p>Акция действует до конца октября.</p>`}
+];
+
+const DAYS = ['Пн','Вт','Ср','Чт','Пт','Сб'];
+// g: w — женская, m — мужская, a — все
+const SCHEDULE = {
+  'Пн':[['7:00','back','w','Екатерина'],['9:30','neuro','w','Ника'],['18:00','back','m','Екатерина'],['19:15','step1','w','Анна']],
+  'Вт':[['7:00','back','m','Ника'],['10:00','back','w','Екатерина'],['18:00','neuro','w','Ника'],['19:15','step2','w','Анна'],['20:30','neuro','m','Ника']],
+  'Ср':[['7:00','back','w','Екатерина'],['9:30','step1','w','Анна'],['18:00','back','m','Екатерина'],['19:15','back','w','Ника']],
+  'Чт':[['7:00','back','m','Ника'],['10:00','neuro','w','Ника'],['18:00','step1','m','Анна'],['19:15','step2','w','Анна'],['20:30','neuro','m','Ника']],
+  'Пт':[['7:00','back','w','Екатерина'],['9:30','back','w','Ника'],['18:00','back','m','Екатерина']],
+  'Сб':[['10:00','back','a','Екатерина'],['11:15','step1','w','Анна'],['12:30','neuro','a','Ника']]
+};
+
+const REVIEWS = [
+  {a:'Екатерина', t:'Тренируюсь с Никой уже два года. Ушли боли в пояснице и шее, минус 10 кг. Здесь главное не сжечь калории, а двигаться осознанно и для здоровья.'},
+  {a:'Анна', t:'Занимаюсь полтора года: выросли мышцы, появилась выносливость, научилась отжиматься. Сначала разминка с мячиками для стоп казалась лишней, а результат оказался лучше, чем в других клубах.'},
+  {a:'Анастасия', t:'Хожу на «Здоровую спину» со сколиозом. Перед стартом тренер отправила к ортопеду, а когда появились проблемы с коленом, тренеры и врачи вместе подобрали план. На повторном осмотре ортопед сказал, что задача решена.'},
+  {a:'Вазирбек', t:'Пришёл ради реабилитации: протрузии и грыжи. Через 2–3 месяца боль в пояснице ушла. Нравятся мини-группы до 6 человек и удобная запись.'},
+  {a:'Татьяна', t:'Уютный чистый зал, кондиционер, тёплый пол в прихожей. Тренеры работают бережно и учитывают особенности здоровья. Пресс и осанка заметно улучшились.'},
+  {a:'Анна Д.', t:'Занимаюсь больше года. Уютный зал и профессиональные тренеры. Благодаря занятиям бросила курить и сбросила лишний вес.'}
+];
+/* ===== /ДАННЫЕ ===== */
+
+const byId = Object.fromEntries(DIRECTIONS.map(d=>[d.id,d]));
+const GRP = {w:['g-w','Женская'],m:['g-m','Мужская'],a:['g-a','Все']};
+const esc = s => s.replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+
+// Направления
+document.getElementById('dirGrid').innerHTML = DIRECTIONS.map((d,i)=>`
+  <article class="dcard reveal ${d.feature?'feature':''} ${d.trial?'trial':''}" data-id="${d.id}" tabindex="0" role="button">
+    <div class="dtop"><span class="dnum">0${i+1}</span><span class="dtag ${d.trial?'clay':''}">${d.tag}</span></div>
+    <h3>${d.title}</h3>
+    <p>${d.short}</p>
+    <span class="dmore">Подробнее →</span>
+  </article>`).join('');
+
+// Модалка
+const ov = document.getElementById('overlay');
+function openDir(id){
+  const d = byId[id];
+  document.getElementById('mCat').textContent = 'Направление';
+  document.getElementById('mTitle').textContent = d.title;
+  document.getElementById('mBody').innerHTML = `<div class="mfacts">${d.facts.map(f=>`<span>${f}</span>`).join('')}</div>${d.body}`;
+  ov.classList.add('open'); ov.setAttribute('aria-hidden','false');
+  document.body.style.overflow='hidden';
+}
+function closeM(){ov.classList.remove('open');ov.setAttribute('aria-hidden','true');document.body.style.overflow=''}
+document.getElementById('dirGrid').addEventListener('click',e=>{const c=e.target.closest('.dcard');if(c)openDir(c.dataset.id)});
+document.getElementById('dirGrid').addEventListener('keydown',e=>{if(e.key==='Enter'){const c=e.target.closest('.dcard');if(c)openDir(c.dataset.id)}});
+document.getElementById('mClose').onclick=closeM;
+document.getElementById('mCta').onclick=closeM;
+ov.addEventListener('click',e=>{if(e.target===ov)closeM()});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeM()});
+
+// Расписание
+const tabs = document.getElementById('tabs'), sched = document.getElementById('sched');
+function showDay(day){
+  [...tabs.children].forEach(b=>{const on=b.dataset.d===day;b.classList.toggle('on',on);b.setAttribute('aria-selected',on)});
+  sched.innerHTML = SCHEDULE[day].map(([t,id,g,coach])=>{
+    const d=byId[id], [cls,lbl]=GRP[g];
+    return `<div class="srow"><div class="stime">${t}</div>
+      <div class="sname">${d.title}<small>Тренер: ${coach} · 55 мин</small></div>
+      <span class="sgrp ${cls}">${lbl}</span>
+      <button class="btn sm ghost" data-id="${id}">О занятии</button></div>`;
+  }).join('');
+}
+tabs.innerHTML = DAYS.map(d=>`<button class="tab" role="tab" data-d="${d}">${d}</button>`).join('');
+tabs.addEventListener('click',e=>{const b=e.target.closest('.tab');if(b)showDay(b.dataset.d)});
+sched.addEventListener('click',e=>{const b=e.target.closest('button[data-id]');if(b)openDir(b.dataset.id)});
+const today = DAYS[(new Date().getDay()+6)%7] || 'Пн';
+showDay(SCHEDULE[today]?today:'Пн');
+
+// Отзывы
+const rv = document.getElementById('rvWrap');
+rv.innerHTML = REVIEWS.map(r=>`<div class="rcard"><span class="stars">★★★★★</span>
+  <div class="rcard-text">${esc(r.t)}</div>
+  <div class="rcard-footer"><span class="rcard-author">${esc(r.a)}</span><span class="rcard-source">2ГИС</span></div></div>`).join('');
+const step = ()=>rv.querySelector('.rcard').offsetWidth+16;
+document.getElementById('rvPrev').onclick=()=>rv.scrollBy({left:-step(),behavior:'smooth'});
+document.getElementById('rvNext').onclick=()=>rv.scrollBy({left:step(),behavior:'smooth'});
+
+// Меню
+const burger=document.getElementById('burger'), mob=document.getElementById('mobMenu');
+burger.onclick=()=>mob.classList.toggle('open');
+mob.querySelectorAll('a').forEach(a=>a.onclick=()=>mob.classList.remove('open'));
+
+// Появление при прокрутке
+const io = new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
