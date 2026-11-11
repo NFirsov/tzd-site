@@ -59,6 +59,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(243,241,234,
 .hero-facts{display:flex;gap:36px;margin-top:48px;flex-wrap:wrap}
 .hero-facts b{display:block;font-family:'Unbounded';font-weight:400;font-size:30px;color:var(--sage-dk)}
 .hero-facts span{font-size:13px;color:var(--mute)}
+.hero-edu{margin-top:24px;max-width:540px;font-size:14px;color:var(--ink2);padding-left:14px;border-left:2px solid var(--sage)}
 .hero-art{position:relative;aspect-ratio:1/1.1;border-radius:200px 200px var(--r) var(--r);background:linear-gradient(160deg,var(--sage) 0%,var(--sage-dk) 100%);overflow:hidden}
 .hero-art svg{position:absolute;inset:0;width:100%;height:100%}
 .hero-art .chip{position:absolute;background:var(--paper);border-radius:16px;padding:14px 18px;box-shadow:0 10px 30px rgba(0,0,0,.12);font-size:13px;line-height:1.35}
@@ -81,6 +82,9 @@ section{padding:100px 0}
 .acard .ic svg{width:24px;height:24px;stroke:var(--sage-dk);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
 .acard h3{font-size:17px;margin-bottom:10px}
 .acard p{font-size:14px;color:var(--ink2)}
+.acard ul{list-style:none;display:flex;flex-direction:column;gap:8px}
+.acard li{font-size:14px;color:var(--ink2);padding-left:16px;position:relative}
+.acard li::before{content:'';position:absolute;left:0;top:9px;width:6px;height:6px;border-radius:50%;background:var(--sage)}
 .about-quote{margin-top:16px;background:var(--sage-dk);color:var(--bg);border-radius:var(--r);padding:44px;display:grid;grid-template-columns:auto 1fr;gap:32px;align-items:center}
 .about-quote .q{font-family:'Unbounded';font-weight:300;font-size:clamp(18px,2.2vw,26px);line-height:1.4}
 .about-quote .who{font-size:14px;opacity:.75;margin-top:14px}
@@ -282,7 +286,7 @@ footer{padding:40px 0;border-top:1px solid var(--line);font-size:13px;color:var(
   <div class="wrap hero-grid">
     <div>
       <span class="badge">Бесплатное пробное занятие до конца октября</span>
-      <h1>Движение,<br>которое <em>лечит</em>,<br>а не изматывает</h1>
+      <h1>Движение,<br>которое <em>освобождает<br>от напряжения</em>,<br>а не изматывает.</h1>
       <p class="lead">Фитнес-студия в Кольцово для тех, кому важны здоровая спина, суставы и хорошее самочувствие. Мини-группы до 6 человек, отдельные мужские и женские группы, внимательные тренеры.</p>
       <div class="hero-cta">
         <a href="#trial" class="btn clay">Записаться на пробное</a>
@@ -291,8 +295,9 @@ footer{padding:40px 0;border-top:1px solid var(--line);font-size:13px;color:var(
       <div class="hero-facts">
         <div><b>до 6</b><span>человек в группе</span></div>
         <div><b>4.9</b><span>рейтинг в 2ГИС</span></div>
-        <div><b>4</b><span>направления</span></div>
+        <div><b>1</b><span>абонемент на все направления</span></div>
       </div>
+      <p class="hero-edu">100% тренеров имеют высшее физкультурное образование по физической культуре и адаптивной физической культуре.</p>
     </div>
     <div class="hero-art" aria-hidden="true">
       <svg viewBox="0 0 400 440" preserveAspectRatio="xMidYMid slice">
@@ -329,15 +334,15 @@ footer{padding:40px 0;border-top:1px solid var(--line);font-size:13px;color:var(
     <div class="s-head reveal">
       <div>
         <div class="s-label">О студии</div>
-        <h2 class="s-title">Тренировки ради здоровья, а не ради сожжённых калорий</h2>
+        <h2 class="s-title">Тренировки ради энергии и здоровья, а не ради истощения и усталости</h2>
       </div>
-      <p class="s-sub">Небольшая уютная студия на Никольском проспекте. Мы работаем по предварительной записи и подбираем нагрузку под ваше состояние здоровья.</p>
+      <p class="s-sub">Небольшая уютная студия на Никольском проспекте. Мы работаем по предварительной записи и подбираем нагрузку под ваши индивидуальные особенности.</p>
     </div>
     <div class="about-grid">
       <div class="acard reveal">
         <div class="ic"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6M15 14.5c3 0 6 1.8 6 5.5"/></svg></div>
         <h3>Мини-группы до 6 человек</h3>
-        <p>Тренер видит каждого, поправляет технику и даёт индивидуальные рекомендации.</p>
+        <p>Тренер видит каждого и своевременно корректирует технику. Упражнения подбираются под особенности и задачи каждого тренирующегося.</p>
       </div>
       <div class="acard reveal">
         <div class="ic"><svg viewBox="0 0 24 24"><path d="M12 3v18M5 7h14M5 17h14"/></svg></div>
@@ -347,12 +352,35 @@ footer{padding:40px 0;border-top:1px solid var(--line);font-size:13px;color:var(
       <div class="acard reveal">
         <div class="ic"><svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-7-11a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 6.5-7 11-7 11z"/></svg></div>
         <h3>Бережный подход</h3>
-        <p>Перед стартом обсуждаем ваше здоровье и при необходимости советуем консультацию врача.</p>
+        <p>Перед занятиями оцениваем готовность к нагрузке, при необходимости направляем к врачу или отказываем в тренировке. Однажды отказ в тренировке помог спасти жизнь человеку, и мы получили высокую оценку Минздрава и федеральных СМИ.</p>
       </div>
       <div class="acard reveal">
         <div class="ic"><svg viewBox="0 0 24 24"><path d="M3 10l9-6 9 6v10H3z"/><path d="M9 20v-6h6v6"/></svg></div>
-        <h3>Свежий ремонт</h3>
-        <p>Новый инвентарь, кондиционер, тёплый пол в прихожей, чистая раздевалка и питьевая вода.</p>
+        <h3>Комфортное пространство</h3>
+        <p>Первый этаж с отдельным входом, свежий инвентарь премиального сегмента, кондиционер с дефлектором, hi-fi акустика, обилие окон и зеркал, чистая вода в доступе. Чистота и высокие стандарты гигиены.</p>
+      </div>
+      <div class="acard reveal">
+        <div class="ic"><svg viewBox="0 0 24 24"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/></svg></div>
+        <h3>Спортивный пол</h3>
+        <p>Специализированное спортивное напольное покрытие обеспечивает снижение ударной нагрузки на суставы и позвоночник.</p>
+      </div>
+      <div class="acard reveal">
+        <div class="ic"><svg viewBox="0 0 24 24"><path d="M3 12h4l3-8 4 16 3-8h4"/></svg></div>
+        <h3>Высокие технологии и передовые мировые методики</h3>
+        <ul>
+          <li>Единственные в Кольцово проводим тренировки с портативным миографом.</li>
+          <li>Единственные в Сибири официально представляем итальянскую методику Bioginnastica®.</li>
+        </ul>
+      </div>
+      <div class="acard reveal">
+        <div class="ic"><svg viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg></div>
+        <h3>Наша специализация</h3>
+        <p>Ведём занятия в рамках физической культуры и адаптивной физической культуры. Не оказываем медицинских услуг и не проводим спортивную подготовку.</p>
+      </div>
+      <div class="acard reveal">
+        <div class="ic"><svg viewBox="0 0 24 24"><path d="M2 9l10-5 10 5-10 5z"/><path d="M6 11v5c0 1.5 3 3 6 3s6-1.5 6-3v-5"/></svg></div>
+        <h3>Образованные и опытные тренеры</h3>
+        <p>Тренеры имеют высшее образование по физической культуре и адаптивной физической культуре, непрерывно учатся и подтверждают навыки оказания первой помощи. Вместо случайных упражнений — физическое тестирование и обоснованный подбор нагрузки.</p>
       </div>
     </div>
     <div class="about-quote reveal">
@@ -397,15 +425,6 @@ footer{padding:40px 0;border-top:1px solid var(--line);font-size:13px;color:var(
           <div class="trole">Основатель студии, ведущий тренер</div>
           <p>Специалист по оздоровительному фитнесу и работе со спиной. Делает акцент на технике, стопах и осознанном движении.</p>
           <div class="tskills"><span>Здоровая спина</span><span>Нейро-фитнес</span><span>Степ</span></div>
-        </div>
-      </div>
-      <div class="tcard reveal">
-        <div class="tphoto" style="background:linear-gradient(150deg,#d39a7c,#a9603f)">ЕВ<small>место для фото</small><img src="img/ekaterina-vasnetsova.jpg" alt="Екатерина Васнецова" loading="lazy" onerror="this.remove()"></div>
-        <div class="tbody">
-          <div class="tname">Екатерина Васнецова</div>
-          <div class="trole">Мастер-тренер, нутрициолог</div>
-          <p>Тренер групповых программ, ведёт «Здоровую спину». Как нутрициолог помогает выстроить питание под ваши цели и самочувствие.</p>
-          <div class="tskills"><span>Здоровая спина</span><span>Групповые программы</span><span>Нутрициология</span></div>
         </div>
       </div>
       <div class="tcard reveal">
@@ -613,12 +632,12 @@ const DIRECTIONS = [
 const DAYS = ['Пн','Вт','Ср','Чт','Пт','Сб'];
 // g: w — женская, m — мужская, a — все
 const SCHEDULE = {
-  'Пн':[['7:00','back','w','Екатерина'],['9:30','neuro','w','Ника'],['18:00','back','m','Екатерина'],['19:15','step1','w','Анна']],
-  'Вт':[['7:00','back','m','Ника'],['10:00','back','w','Екатерина'],['18:00','neuro','w','Ника'],['19:15','step2','w','Анна'],['20:30','neuro','m','Ника']],
-  'Ср':[['7:00','back','w','Екатерина'],['9:30','step1','w','Анна'],['18:00','back','m','Екатерина'],['19:15','back','w','Ника']],
+  'Пн':[['7:00','back','w','Ника'],['9:30','neuro','w','Ника'],['18:00','back','m','Ника'],['19:15','step1','w','Анна']],
+  'Вт':[['7:00','back','m','Ника'],['10:00','back','w','Ника'],['18:00','neuro','w','Ника'],['19:15','step2','w','Анна'],['20:30','neuro','m','Ника']],
+  'Ср':[['7:00','back','w','Ника'],['9:30','step1','w','Анна'],['18:00','back','m','Ника'],['19:15','back','w','Ника']],
   'Чт':[['7:00','back','m','Ника'],['10:00','neuro','w','Ника'],['18:00','step1','m','Анна'],['19:15','step2','w','Анна'],['20:30','neuro','m','Ника']],
-  'Пт':[['7:00','back','w','Екатерина'],['9:30','back','w','Ника'],['18:00','back','m','Екатерина']],
-  'Сб':[['10:00','back','a','Екатерина'],['11:15','step1','w','Анна'],['12:30','neuro','a','Ника']]
+  'Пт':[['7:00','back','w','Ника'],['9:30','back','w','Ника'],['18:00','back','m','Ника']],
+  'Сб':[['10:00','back','a','Ника'],['11:15','step1','w','Анна'],['12:30','neuro','a','Ника']]
 };
 
 const REVIEWS = [
